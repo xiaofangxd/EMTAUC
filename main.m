@@ -17,7 +17,7 @@ addpath(genpath(pwd))
 
 %% algorithm_parameter setting of EMTAUC
 load ('dataset.mat');                        % Load data
-for name = 1                                    % Test suites£º1-2('diabetes_scale' and 'fourclass_scale', for example) All datasets can get from https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/.
+for name = 1                                    % Test suitesÂ£Âº1-2('diabetes_scale' and 'fourclass_scale', for example) All datasets can get from https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/.
     gdata = gData(name);
     gCV = 5;                                    % Cross validation
     vIndices = crossvalind('Kfold', gdata.datNum, gCV);
@@ -48,8 +48,8 @@ for name = 1                                    % Test suites£º1-2('diabetes_sca
         disC = 15;                                % the index of Pc
         proM = 1;                                 % Pm
         disM = 15;                                % the index of Pm
-        selection_process = 'elitist';            % selection process: elitist¡¢roulette wheel¡¢Tournament
-        select = 2;                               % 1:Unified search space£¬2:Independent search space
+        selection_process = 'elitist';            % selection process: elitistÂ¡Â¢roulette wheelÂ¡Â¢Tournament
+        select = 2;                               % 1:Unified search spaceÂ£Â¬2:Independent search space
         Ben = 0.25;                               % Beneficial factor
         Harm = 0.5;                               % HaMTMAUCOrmful factor
         utf = 20;                                 % Interval of Dynamic adjustment strategy
@@ -83,9 +83,9 @@ for name = 1                                    % Test suites£º1-2('diabetes_sca
         %% Record
         data.EvBestFitness_SBGA=EvBestFitness_SBGA;
         data.timesSBGA = timesSBGA;
-        save(['Data/',num2str(name),'_SBGA_',num2str(g),'.mat'],'data');
+        save(['data/',num2str(name),'_SBGA_',num2str(g),'.mat'],'data');
     end
     dataa.AUC_SBGA = calAUC1;
     disp([ num2str(mean(mean(calAUC1,1))),'(',num2str(std(std(calAUC1,1))),')']);
-    save(['Data/',num2str(name),'_SBGA_',num2str(g),'_all.mat'],'dataa');
+    save(['data/',num2str(name),'_SBGA_',num2str(g),'_all.mat'],'dataa');
 end
