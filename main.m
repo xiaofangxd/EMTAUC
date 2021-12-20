@@ -83,9 +83,9 @@ for name = 1                                    % Test suites£º1-2('diabetes_s
         %% Record
         data.EvBestFitness_SBGA=EvBestFitness_SBGA;
         data.timesSBGA = timesSBGA;
-        save(['data/',num2str(name),'_SBGA_',num2str(g),'.mat'],'data');
+        save(['Data/',num2str(name),'_SBGA_',num2str(g),'.mat'],'data');
     end
     dataa.AUC_SBGA = calAUC1;
     disp([ num2str(mean(mean(calAUC1,1))),'(',num2str(std(std(calAUC1,1))),')']);
-    save(['data/',num2str(name),'_SBGA_',num2str(g),'_all.mat'],'dataa');
+    save(['Data/',num2str(name),'_SBGA_',num2str(g),'_all.mat'],'dataa');
 end
